@@ -1,0 +1,124 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true,
+    // TODO: implement when using jest
+    // "jest": true,
+  },
+  "ignorePatterns": [
+    "node_modules",
+    "dist",
+    "build",
+    "coverage",
+    "storybook-static",
+    "public",
+    "*.html",
+    "*.json",
+    "*.md",
+    "*.mdx",
+  ],
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react-hooks/recommended",
+    // TODO: implement when using jest
+    // "plugin:jest/recommended",
+    "plugin:prettier/recommended",
+    "plugin:storybook/recommended",
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "createDefaultProgram": true,
+    "ecmaFeatures": { "jsx": true },
+    "ecmaVersion": "latest",
+    "sourceType": "module",
+  },
+  "plugins": [
+    "react",
+    "@typescript-eslint",
+    "prettier",
+    // TODO: implement when using jest
+    // "jest",
+    "eslint-plugin-import",
+    "import",
+    "sort-keys-fix",
+    "typescript-sort-keys",
+    "unused-imports",
+    // TODO: implement when using emotion/css
+    // "@emotion"
+  ],
+  "rules": {
+    "react/prop-types": "off",
+    "@typescript-eslint/consistent-type-definitions": ["error", "type"],
+    "@typescript-eslint/naming-convention": [
+      "error",
+      { "format": ["PascalCase"], "selector": "typeLike" },
+      { "format": ["PascalCase"], "selector": "enumMember" },
+    ],
+    "@typescript-eslint/no-empty-function": ["warn", { "allow": ["arrowFunctions"] }],
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/no-unused-vars": "off",
+    "import/no-duplicates": "error",
+    "import/order": [
+      "warn",
+      {
+        "groups": [["builtin", "external", "internal"]],
+        "pathGroups": [
+          { "group": "external", "pattern": "react", "position": "before" },
+          {
+            "group": "external",
+            "pattern": "@mui/material",
+            "position": "before",
+          },
+          {
+            "group": "external",
+            "pattern": "@mui/material/**",
+            "position": "before",
+          },
+        ],
+        "pathGroupsExcludedImportTypes": ["builtin"],
+      },
+    ],
+    "linebreak-style": ["error", "unix"],
+    "no-console": ["warn", { "allow": ["warn", "error", "info"] }],
+    "prettier/prettier": "off",
+    "react-hooks/exhaustive-deps": "warn",
+    "react-hooks/rules-of-hooks": "error",
+    "react/jsx-curly-brace-presence": "warn",
+    "react/jsx-uses-react": "off",
+    "react/no-array-index-key": "warn",
+    "react/no-unknown-property": ["error", { "ignore": ["css"] }],
+    "react/prefer-stateless-function": ["error", { "ignorePureComponents": false }],
+    "react/react-in-jsx-scope": "off",
+    "semi": ["error", "never"],
+    "sort-keys": "off",
+    "sort-keys-fix/sort-keys-fix": ["warn", "asc", { "caseSensitive": true, "natural": false }],
+    "spaced-comment": "warn",
+    "typescript-sort-keys/interface": "warn",
+    "typescript-sort-keys/string-enum": "warn",
+    "unused-imports/no-unused-imports": "warn",
+    "unused-imports/no-unused-vars": [
+      "warn",
+      {
+        "args": "after-used",
+        "argsIgnorePattern": "^_",
+        "vars": "all",
+        "varsIgnorePattern": "^_",
+        "ignoreRestSiblings": true,
+      },
+    ],
+    "eqeqeq": ["error", "always"],
+  },
+  "overrides": [
+    {
+      "files": ["*.d.ts"],
+      "rules": {
+        "@typescript-eslint/consistent-type-definitions": "off",
+      },
+    },
+  ],
+  "settings": {
+    "react": { "version": "detect" },
+  },
+}
