@@ -1,0 +1,1 @@
+npm run fix:prettify && npm run fix:eslint && npm run build && npm run build-storybook && echo "\n✅ TESTS PASSED\n"
