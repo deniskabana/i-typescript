@@ -46,6 +46,7 @@ export default [
         pathGroupsExcludedImportTypes: ["builtin"],
       },
     ],
+    "sort-keys": "off",
     "sort-keys-fix/sort-keys-fix": ["error", "asc", { caseSensitive: true, natural: false }],
     "typescript-sort-keys/interface": "error",
     "typescript-sort-keys/string-enum": "error",
@@ -53,7 +54,6 @@ export default [
     "linebreak-style": ["error", "unix"],
     "no-console": ["error", { allow: ["warn", "error", "info"] }],
     "prettier/prettier": "error",
-    "semi": ["error", "never"],
     "spaced-comment": "error",
     "unused-imports/no-unused-imports": "error",
     "unused-imports/no-unused-vars": [
